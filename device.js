@@ -1,17 +1,15 @@
 function Device(name) {
-  this.name = name;
-  this.status = 'off';
+  this._name = name;
+  this._status = false;
 
 }
+
 Device.prototype.setName = function (name) {
-  this.name = name;
+  this._name = name;
 };
 Device.prototype.on = function () {
-  this.status = 'on';
+  this._status = true;
 };
 Device.prototype.off = function () {
-  this.status = 'off';
+  this._status = false;
 };
-//Device.prototype.timer = function () {
-//  this.stanus = on;
-//};

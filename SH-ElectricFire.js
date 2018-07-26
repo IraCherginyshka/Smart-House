@@ -1,12 +1,12 @@
-function ElectricFire(name, power) {
+function ElectricFire(name) {
   Device.call(this, name);
-  this._power = power;
+  this._power = 0;
 }
 ElectricFire.prototype = Object.create(Device.prototype);
 ElectricFire.prototype.constructor = ElectricFire;
 
 ElectricFire.prototype.setPowerFire = function (power) {
-  if (0 < power && power < 10) {
+  if (0 <= power && power <= 10) {
     this._power = power;
   }
 };
