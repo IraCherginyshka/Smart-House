@@ -1,22 +1,22 @@
-function ElectricFire(name) {
-  Device.call(this, name);
+'use strict';
+
+function ElectricFire(model) {
+  Device.call(this, model);
   this._power = 0;
 }
 ElectricFire.prototype = Object.create(Device.prototype);
 ElectricFire.prototype.constructor = ElectricFire;
 
-ElectricFire.prototype.setPowerFire = function (power) {
-  if (0 <= power && power <= 10) {
-    this._power = power;
+ElectricFire.prototype.increasePower = function (power) {
+    if (this._power < 10) {
+      this._power++;
+    }
+};
+ElectricFire.prototype.decreasePower = function (power) {
+  if (this._power > 0) {
+    this._power--;
   }
 };
-ElectricFire.prototype.getPowerFire = function () {
+ElectricFire.prototype.getPower = function () {
     return this._power;
 };
-
-var e = new ElectricFire('Canon', 7);
-
-e.on();
-e.setPowerFire();
-console.log(e.getPowerFire());
-console.log(e.status);

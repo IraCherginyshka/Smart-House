@@ -1,5 +1,7 @@
-function AirConditioning (name) {
-  Device.call(this, name);
+'use strict';
+
+function AirConditioning (model) {
+  Device.call(this, model);
   this._typeOfOperation = "";
   this._temperatura = 18;
   this._lock = false; //блоктровка пульта от детей
@@ -9,16 +11,8 @@ AirConditioning.prototype = Object.create(Device.prototype);
 AirConditioning.prototype.constructor = AirConditioning;
 
 AirConditioning.prototype.setTypeOfOperation = function (mode) {
-  if (mode === 'Обогрев') {
-    this._typeOfOperation = 'Обогрев';
-  } else if (mode === 'Охлаждение') {
-    this._typeOfOperation = 'Охлаждение';
-  } else if (mode === 'Вентиляция') {
-    this._typeOfOperation = 'Вентиляция';
-  } else {
-    return 'Установите режим';
-  }
-};
+  this._typeOfOperation = ['Обогрев','Охлаждение', 'Вентиляция'];
+}; // доработать !!!!!!!!!!!!!!
 AirConditioning.prototype.getTypeOfOperation = function () {
   return this._typeOfOperation;
 };
@@ -30,27 +24,15 @@ AirConditioning.prototype.setTemperatura = function (temp) {
 AirConditioning.prototype.getTemperatura = function (temp) {
   return this._temperatura;
 };
-AirConditioning.prototype.setLockOk = function () {
+AirConditioning.prototype.unLock = function () {
   this._lock = true;
 };
-AirConditioning.prototype.setLockOff = function () {
+AirConditioning.prototype.setLock = function () {
   this._lock = false;
 };
 AirConditioning.prototype.getLock = function () {
   return this._lock;
 };
-
-var a = new AirConditioning('Bosh');
-a.setTypeOfOperation('Охлаждение');
-console.log(a.getTypeOfOperation());
-a.setTemperatura(27);
-console.log(a.getTemperatura());
-a.setLockOk();
-console.log(a.getLock());
-console.log(a);
-
-
-
 
 
 
