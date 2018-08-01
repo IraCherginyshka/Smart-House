@@ -1,5 +1,7 @@
-function TvSet (name) {
-  Device.call(this, name);
+'use strict';
+
+function TvSet (model) {
+  Device.call(this, model);
   this._channel = 0;
   this._volume = 0;
 }
@@ -7,12 +9,12 @@ function TvSet (name) {
 TvSet.prototype = Object.create(Device.prototype);
 TvSet.prototype.constructor = TvSet;
 
-TvSet.prototype.setTvChannel = function (value) {
+TvSet.prototype.setChannel = function (value) {
   if (0 <= value && value <= 100) {
     this._channel = value;
   }
 };
-TvSet.prototype.getTvChannel = function () {
+TvSet.prototype.getChannel = function () {
   return this._channel;
 };
 TvSet.prototype.setVolume = function (value) {
