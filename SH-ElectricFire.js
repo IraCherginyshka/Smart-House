@@ -7,12 +7,12 @@ function ElectricFire(model) {
 ElectricFire.prototype = Object.create(Device.prototype);
 ElectricFire.prototype.constructor = ElectricFire;
 
-ElectricFire.prototype.increasePower = function (power) {
-    if (this._power < 10) {
-      this._power++;
-    }
+ElectricFire.prototype.increasePower = function () {
+  if (this._power < 10) {
+    this._power++;
+  }
 };
-ElectricFire.prototype.decreasePower = function (power) {
+ElectricFire.prototype.decreasePower = function () {
   if (this._power > 0) {
     this._power--;
   }

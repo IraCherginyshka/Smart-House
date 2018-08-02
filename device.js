@@ -1,14 +1,16 @@
 function Device(model) {
-  this._model = model || 'Введите данные';
+  this._model = model;
   this._status = false;
 
 }
 
 Device.prototype.setModel = function (model) {
-  this._name = model;
+    this._model = model;
 };
-Device.prototype.getModel = function (model) {
-  return this._model;
+Device.prototype.getModel = function () {
+  if (this._model ===  undefined) {
+    return '';
+  }
 };
 Device.prototype.on = function () {
   this._status = true;

@@ -68,7 +68,7 @@ function renderHouse(h) {
 }
 
 function renderFire () {
-  var f = new ElectricFire()
+  var f = new ElectricFire();
   myHouse.addElectricFire(f);
   var number = myHouse._fire.length - 1;
 
@@ -82,6 +82,7 @@ function renderFire () {
 
   var model = document.createElement('input');
   model.type = 'text';
+  model.placeholder = 'Введите данные';
   model.value = f.getModel();
   model.className = 'information';
   model.addEventListener('input', function () {
@@ -141,8 +142,9 @@ function renderFire () {
   deleteBtn.innerHTML = "Удалить";
   deleteBtn.className = "off";
   deleteBtn.addEventListener('click', function () {
-    myHouse.deleteElectricFire();
-    document.getElementsByClassName('classD1')[number].remove();
+    var i = myHouse._fire.indexOf(f);
+    myHouse.deleteElectricFire(i);
+    document.getElementsByClassName('classD1')[i].remove();
   });
 
   document.body.appendChild(fireDiv);
@@ -158,7 +160,7 @@ function renderFire () {
   document.getElementsByClassName('classD1')[number].appendChild(deleteBtn);
 
 }
-
+/*
 
 function renderConditioning(h) {
   var airDiv = document.createElement('div');
@@ -184,6 +186,6 @@ function renderConditioning(h) {
 
 
 
-
+*/
 
 renderHouse(myHouse);

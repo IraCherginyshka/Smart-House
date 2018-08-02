@@ -1,6 +1,6 @@
 function SmartHouse(owner, adress) {
-  this._owner = owner || 'Введите данные';
-  this._adress = adress || 'Введите данные';
+  this._owner = owner;
+  this._adress = adress;
   this._tv = [];
   this._fire = [];
   this._air = [];
@@ -22,15 +22,23 @@ SmartHouse.prototype.getAdress = function (adress) {
 SmartHouse.prototype.addTV = function (device) {
   this._tv.push(device);
 };
+SmartHouse.prototype.deleteTV = function (x) {
+  this._tv.splice(x, 1);
+  return this._tv;
+};
 SmartHouse.prototype.addElectricFire = function (device) {
   this._fire.push(device);
 };
-SmartHouse.prototype.deleteElectricFire = function (number) {
-  this._fire.splice(number, 1);
+SmartHouse.prototype.deleteElectricFire = function (x) {
+  this._fire.splice(x, 1);
   return this._fire;
 };
 SmartHouse.prototype.addAirCondition = function (device) {
   this._air.push(device);
+};
+SmartHouse.prototype.deleteAirCondition = function (x) {
+  this._air.splice(x, 1);
+  return this._air;
 };
 SmartHouse.prototype.getTV = function () {
   return this._tv;
@@ -41,17 +49,3 @@ SmartHouse.prototype.getElectricFire = function () {
 SmartHouse.prototype.getAirCondition = function () {
   return this._air;
 };
-
-
-
-
-
-SmartHouse.prototype.addTv = function (device) {
-  this._device.push(device);
-};
-SmartHouse.prototype.getDevice = function () {
-  return this._device;
-};// доработать
-SmartHouse.prototype.deleteDevice = function (device) {
-  this._device.push(device);
-};// доработать
