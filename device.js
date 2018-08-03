@@ -8,9 +8,7 @@ Device.prototype.setModel = function (model) {
     this._model = model;
 };
 Device.prototype.getModel = function () {
-  if (this._model ===  undefined) {
-    return '';
-  }
+    return this._model;
 };
 Device.prototype.on = function () {
   this._status = true;

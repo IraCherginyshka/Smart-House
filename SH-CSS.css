@@ -1,5 +1,5 @@
 body{
-  background-color: #F0F8FF;
+  background-color: #cfcdfa;
 }
 
 h1{
@@ -8,7 +8,7 @@ h1{
   font-family: Bradley Hand, cursive;
   font-size: 70px;
   font-weight: bold;
-  color: #00008B
+  color: #0d0b0b;
 }
 .classDiv{
   padding: 5px;
@@ -28,7 +28,7 @@ h1{
   display: inline-block;
   color: #7FFFD4;
   text-decoration: none;
-  background: #008080;
+  background: #903cf0;
   padding: 5px;
   border: 2px solid darkblue;
   margin: 5px;
@@ -43,18 +43,32 @@ h1{
   padding: 3px;
 
 }
+.classD{
+  padding: 5px;
+  border: 2px solid black;
+  width: 250px;
+  margin: 5px;
+  background-color: lightgrey;
+}
 .classD1{
   padding: 5px;
   border: 2px solid black;
   width: 250px;
   margin: 5px;
-  background-color: #FF0000;
+  background-color: #f79f07;
+}
+.wrp {
+    width:700px;
+    margin:0 auto;
+    margin-top:20px;
+    height:70%;
 }
 .button{
   background-color: white;
   padding: 1px;
   border: 2px solid black;
   width: 20px;
+  height: 20px;
   margin: 1px;
 }
 .on{
