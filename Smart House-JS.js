@@ -1,9 +1,10 @@
+'use strict';
+
 function SmartHouse(owner, adress) {
   this._owner = owner;
   this._adress = adress;
   this._tv = [];
   this._fire = [];
-  this._air = [];
 
 }
 
@@ -13,10 +14,10 @@ SmartHouse.prototype.setOwner = function (owner) {
 SmartHouse.prototype.setAdress = function (adress) {
   this._adress = adress;
 };
-SmartHouse.prototype.getOwner = function (owner) {
+SmartHouse.prototype.getOwner = function () {
   return this._owner;
 };
-SmartHouse.prototype.getAdress = function (adress) {
+SmartHouse.prototype.getAdress = function () {
   return this._adress;
 };
 SmartHouse.prototype.addTV = function (device) {
@@ -33,19 +34,9 @@ SmartHouse.prototype.deleteElectricFire = function (x) {
   this._fire.splice(x, 1);
   return this._fire;
 };
-SmartHouse.prototype.addAirCondition = function (device) {
-  this._air.push(device);
-};
-SmartHouse.prototype.deleteAirCondition = function (x) {
-  this._air.splice(x, 1);
-  return this._air;
-};
 SmartHouse.prototype.getTV = function () {
   return this._tv;
 };
 SmartHouse.prototype.getElectricFire = function () {
   return this._fire;
-};
-SmartHouse.prototype.getAirCondition = function () {
-  return this._air;
 };

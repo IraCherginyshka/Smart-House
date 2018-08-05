@@ -1,3 +1,5 @@
+'use strict';
+
 function Device(model) {
   this._model = model;
   this._status = false;
